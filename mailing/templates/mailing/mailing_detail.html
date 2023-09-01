@@ -1,0 +1,23 @@
+{% extends 'mailing/base.html' %}
+
+{% block content %}
+<div class="container">
+    <div class="card mb-4">
+        <div class="card-body">
+            <h5 class="card-title">{{ mailing.theme }}</h5>
+            <p class="card-text"><strong>Периодичность:</strong> {{ mailing.get_period_display }}</p>
+            <p class="card-text"><strong>Статус:</strong> {{ mailing.get_status_display }}</p>
+            <p class="card-text"><strong>Время рассылки:</strong> {{ mailing.mailing_time }}</p>
+            <h6 class="card-subtitle mb-2 text-muted">Клиенты:</h6>
+            <ul class="list-unstyled">
+                {% for client in mailing.client.all %}
+                    <li>{{ client.name }} - {{ client.email }}</li>
+                {% endfor %}
+            </ul>
+            <h6 class="card-subtitle mb-2 text-muted">Сообщение:</h6>
+            <p class="card-text">{{ mailing.message }}</p>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
