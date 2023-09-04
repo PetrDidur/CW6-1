@@ -40,6 +40,7 @@ INSTALLED_APPS = [
 
     'mailing',
     'users',
+    'django_crontab',
 ]
 
 MIDDLEWARE = [
@@ -132,4 +133,13 @@ STATICFILES_DIRS = (
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 AUTH_USER_MODEL = 'users.User'
+
+EMAIL_HOST = 'smtp.yandex.ru'
+EMAIL_PORT = 465
+EMAIL_HOST_USER = 'fuckup@oscarbot.ru'
+EMAIL_HOST_PASSWORD = "AsTSNVv7pun9"
+EMAIL_USE_SSL = True
+
+LOGOUT_REDIRECT_URL = '/'
+LOGIN_REDIRECT_URL = '/'
 
